@@ -66,9 +66,9 @@ module Gmaps4rails
       when "bing"        then @js_array << BING
       else #case googlemaps which is the default
         @js_array << "#{GOOGLE}&sensor=false&client=#{client}&key=#{provider_key}&libraries=geometry#{google_libraries}&#{google_map_i18n}"
-        @js_array << "https://raw.githubusercontent.com/kmpkt/google-maps-infobox/master/infobox.js" if custom_infowindow_class
-        @js_array << "https://raw.githubusercontent.com/mahnunchik/markerclustererplus/master/src/markerclusterer.js" if do_clustering
-        @js_array << "https://raw.githubusercontent.com/printercu/google-maps-utility-library-v3-read-only/master/richmarker/src/richmarker.js" if rich_marker
+        @js_array << "//raw.githubusercontent.com/kmpkt/google-maps-infobox/master/infobox.js" if custom_infowindow_class
+        @js_array << "//raw.githubusercontent.com/mahnunchik/markerclustererplus/master/src/markerclusterer.js" if do_clustering
+        @js_array << "//raw.githubusercontent.com/printercu/google-maps-utility-library-v3-read-only/master/richmarker/src/richmarker.js" if rich_marker
       end
     end
     
