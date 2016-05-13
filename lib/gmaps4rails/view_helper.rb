@@ -6,6 +6,7 @@ module Gmaps4rails
     MAPQUEST   = "http://www.mapquestapi.com/sdk/js/v7.0.s/mqa.toolkit.js"                  
     BING       = "http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"
     GOOGLE     = "//maps.google.com/maps/api/js?v=3.8"
+    GITHUB_CDN = "http://cdn.rawgit.com"
     
     # options is the hash passed to the 'gmaps' helper
     # looks like:
@@ -66,9 +67,9 @@ module Gmaps4rails
       when "bing"        then @js_array << BING
       else #case googlemaps which is the default
         @js_array << "#{GOOGLE}&sensor=false&client=#{client}&key=#{provider_key}&libraries=geometry#{google_libraries}&#{google_map_i18n}"
-        @js_array << "//raw.githubusercontent.com/kmpkt/google-maps-infobox/master/infobox.js" if custom_infowindow_class
-        @js_array << "//raw.githubusercontent.com/mahnunchik/markerclustererplus/master/src/markerclusterer.js" if do_clustering
-        @js_array << "//raw.githubusercontent.com/printercu/google-maps-utility-library-v3-read-only/master/richmarker/src/richmarker.js" if rich_marker
+        @js_array << "#{GITHUB_CDN}/kmpkt/google-maps-infobox/master/infobox.js" if custom_infowindow_class
+        @js_array << "#{GITHUB_CDN}/mahnunchik/markerclustererplus/master/src/markerclusterer.js" if do_clustering
+        @js_array << "#{GITHUB_CDN}/printercu/google-maps-utility-library-v3-read-only/master/richmarker/src/richmarker.js" if rich_marker
       end
     end
     
